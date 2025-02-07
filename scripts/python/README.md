@@ -9,6 +9,7 @@ Here's a list of the currently available scripts in this directory:
 | Script Name | Description | Primary Use Case |
 |-------------|-------------|------------------|
 | check_disk_space.py | Monitors disk space usage and alerts on threshold breach | Server space monitoring |
+| backup_files.py | Creates timestamped backup copies of files | File backup before modifications |
 
 ## Real DevOps Scenario: Disk Space Monitoring
 
@@ -30,6 +31,39 @@ Server performance degradation due to disk space issues requires proactive monit
 - Implements alert system for threshold breaches
 - Generates formatted reports of disk usage
 
+## Real DevOps Scenario: File Backup Management
+
+### backup_files.py
+
+**Problem Statement:**  
+When making changes to critical configuration files or scripts, it's essential to maintain backup copies to prevent data loss and enable quick rollback if needed.
+
+**Key Features:**
+
+- Creates timestamped backup copies of files
+- Validates source file existence
+- Preserves file metadata
+- Returns the path to the backup file
+- Includes error handling and logging
+
+**Technical Implementation:**
+
+- Uses Python's `shutil` library for file operations
+- Implements datetime stamping for unique backup names
+- Maintains original file permissions and timestamps
+- Provides detailed operation logging
+
+**Usage Example:**
+
+```python
+from backup_files import backup_files
+
+# Create a backup of a configuration file
+backup_path = backup_files("text/template.yaml")
+if backup_path:
+    print(f"Backup created successfully at: {backup_path}")
+```
+
 ## Usage
 
 Execute scripts as follows:
@@ -37,7 +71,7 @@ Execute scripts as follows:
 ```bash
 git clone https://github.com/andresjose84/cloud-ops-utils.git 
 cd cloud-ops-utils/scripts/python
-python check_disk_space.py
+python backup_files.py.py
 ```
 
 ## Contributing

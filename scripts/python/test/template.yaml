@@ -1,0 +1,39 @@
+---
+name: Example Template
+version: 1.0.0
+
+metadata:
+  author: John Doe
+  date: 2024-01-01
+  description: Sample template configuration
+
+settings:
+  environment: development
+  debug: true
+  max_retries: 3
+
+resources:
+  - name: resource1
+    type: server
+    properties:
+      size: medium
+      region: us-east-1
+
+  - name: resource2
+    type: database
+    properties:
+      engine: postgresql
+      version: "14"
+
+configurations:
+  logging:
+    level: INFO
+    format: json
+  security:
+    enabled: true
+    encryption: AES256
+
+tags:
+  project: example
+  environment: dev
+  team: cloud-ops
