@@ -68,3 +68,6 @@ Contributions are welcome! Feel free to submit a pull request or open an issue.
 ## 📜 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+![GitHub stars](https://img.shields.io/github/stars/andresjose84/cloud-ops-utils?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/andresjose84/cloud-ops-utils?style=flat-square)
