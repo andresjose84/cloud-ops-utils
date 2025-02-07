@@ -10,6 +10,7 @@ Here's a list of the currently available scripts in this directory:
 |-------------|-------------|------------------|
 | check_disk_space.py | Monitors disk space usage and alerts on threshold breach | Server space monitoring |
 | backup_files.py | Creates timestamped backup copies of files | File backup before modifications |
+| rotate_logs.py | Validates the log folder and moves logs older than the retention period | Moves old log files|
 
 ## Real DevOps Scenario: Disk Space Monitoring
 
@@ -71,7 +72,29 @@ Execute scripts as follows:
 ```bash
 git clone https://github.com/andresjose84/cloud-ops-utils.git 
 cd cloud-ops-utils/scripts/python
-python backup_files.py.py
+python backup_files.py
+```
+
+## Real DevOps Scenario: Automate Log Rotation
+
+### rotate_logs.py
+
+**Problem Statement:**  
+Logs are critical, but they shouldn't fill your disk. Automate log cleanup and archiving with Python.
+
+**Scenario:**
+
+- Your server generates logs daily, and older logs are consuming space
+- You need a solution to move or delete logs older than a specific number of days
+
+## Usage
+
+Execute scripts as follows:
+
+```bash
+git clone https://github.com/andresjose84/cloud-ops-utils.git 
+cd cloud-ops-utils/scripts/python
+python rotate_logs.py
 ```
 
 ## Contributing
