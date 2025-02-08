@@ -2,6 +2,20 @@
 
 This directory contains various Python scripts designed to assist with cloud operations tasks. Each script is documented below with its purpose, usage scenarios, and provided solutions.
 
+## Table of Contents
+
+- [Overview](#cloud-ops-utils---python-scripts)
+- [Available Scripts](#available-scripts)
+- [Disk Space Monitoring](#real-devops-scenario-disk-space-monitoring)
+  - [check_disk_space.py](#check_disk_spacepy)
+- [File Backup Management](#real-devops-scenario-file-backup-management)
+  - [backup_files.py](#backup_filespy)
+- [Log Rotation](#real-devops-scenario-automate-log-rotation)
+  - [rotate_logs.py](#rotate_logspy)
+- [Service Monitoring](#real-devops-scenario-service-status-monitoring)
+  - [check_service_status.py](#check_service_statuspy)
+- [Contributing](#contributing)
+
 ## Available Scripts
 
 Here's a list of the currently available scripts in this directory:
@@ -11,6 +25,7 @@ Here's a list of the currently available scripts in this directory:
 | check_disk_space.py | Monitors disk space usage and alerts on threshold breach | Server space monitoring |
 | backup_files.py | Creates timestamped backup copies of files | File backup before modifications |
 | rotate_logs.py | Validates the log folder and moves logs older than the retention period | Moves old log files|
+| check_service_status.py | Checks the status of specified services | Service status monitoring |
 
 ## Real DevOps Scenario: Disk Space Monitoring
 
@@ -95,6 +110,46 @@ Execute scripts as follows:
 git clone https://github.com/andresjose84/cloud-ops-utils.git 
 cd cloud-ops-utils/scripts/python
 python rotate_logs.py
+```
+
+## Real DevOps Scenario: Service Status Monitoring
+
+### check_service_status.py
+
+**Problem Statement:**  
+Ensuring that critical services are running is essential for maintaining system health and availability.
+
+**Key Features:**
+
+- Checks the status of specified services
+- Provides clear output on service status
+- Handles errors gracefully
+
+**Technical Implementation:**
+
+- Uses Python's subprocess library to interact with system services
+- Checks the status of services using systemctl
+- Prints the status of each service
+
+**Usage Example:**
+
+```python
+from check_service_status import check_service_status
+
+# Check the status of multiple services
+check_service_status("nginx")
+check_service_status("apache2")
+check_service_status("mysql")
+check_service_status("docker")
+```
+
+**Usage**
+Execute scripts as follows:
+
+```bash
+git clone https://github.com/andresjose84/cloud-ops-utils.git 
+cd cloud-ops-utils/scripts/python
+python check_service_status.py
 ```
 
 ## Contributing
